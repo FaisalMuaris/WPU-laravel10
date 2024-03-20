@@ -5,5 +5,5 @@
     <h2>{{ $name }}</h2>
     <h2>{{ $email }}</h2>
     <h2>{{ $alamat }}</h2>
-    <img src="img/{{ $image }}" alt="{{ $email }}" width="200">
+    <img src="img/{{ $image }}" alt="{{ $name }}" width="200" class="img-thumbnail rounded-circle">
 @endsection
