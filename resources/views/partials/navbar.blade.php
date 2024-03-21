@@ -7,9 +7,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link {{ $title === 'Home' ? 'active' : '' }}" aria-current="page" href="/home">Home</a>
+                <a class="nav-link {{ $title === 'Home' ? 'active' : '' }}" aria-current="page" href="/">Home</a>
                 <a class="nav-link {{ $title === 'About' ? 'active' : '' }}" href="/about">About</a>
                 <a class="nav-link {{ $title === 'Posts' ? 'active' : '' }}" href="/posts">Posts</a>
+                <a class="nav-link {{ $title === 'Categories' ? 'active' : '' }}" href="/categories">Categories</a>
             </div>
         </div>
     </div>

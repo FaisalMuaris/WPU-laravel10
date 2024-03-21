@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -15,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-});
+// Route::get('/', function () {
+//     // return view('welcome');
+// });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home', [
         'title' => 'Home'
     ]);
@@ -41,5 +42,18 @@ Route::get('/posts', [PostController::class,'index']);
 // Halaman single post
 Route::get('posts/{post:slug}', [PostController::class,'show']);
 
+Route::get('/categories', function() {
+    return view('categories', [
+        'title' => 'Categories',
+        'categories' => Category::all()
+    ]);
+});
 
+Route::get('/categories/{category:slug}', function(Category $category) {
+    return view('category', [
+        'title' => $category->name,
+        'posts' => $category->posts,
+        'category' => $category->name
+    ]);
+});
 
